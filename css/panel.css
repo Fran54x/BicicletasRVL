@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+img{
+    pointer-events: none;
+}
+
+.admin-panel{
+    display: flex;
+    height: 100vh;
+}
+
+/* Menú */
+.menu{
+    display: flex;
+    background-color: #4c4c4c;
+    padding: 0;
+    color: white;
+    width: 20vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.enlace-simple img{
+    height: 16px;
+    margin-right: 8px;
+}
+.enlace-simple{
+    margin: 1rem 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.enlace-simple:active{
+    color: #bdbdbd;
+}
+
+.enlaces-principales{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 4in;
+    max-height: 5.8in;
+    background-color: #414141;
+}
+.enlaces-principales a img{
+    height: 22px;
+    margin-right: 8px;
+}
+
+.enlaces-principales a{
+    justify-content: center;
+    font-weight: 600;
+    padding: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: 
+        background-color .3s;
+}
+.enlaces-principales a:hover{
+    padding: auto;
+    background-color: #696969;
+    transition: 
+        background-color .3s;
+}
+.enlaces-principales a:active{
+    background-color: #141414;
+    color: #b1b1b1;
+}
+
+/* Contenedor */
+.contenedor{
+    padding: .2in;
+    background-color: white;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
+}
+
+span.logo{
+    display: flex;
+    justify-content: center;
+    padding: .2in;
+    font-size: 2rem;
+    background-color: #202020;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.ventana{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+/* Pestaña Productos */
+
+h2{
+    font-size: 1.6em;
+    padding: .3em 0;
+    color: #e6890f;
+    /* color: red; */
+    font-weight: bold;
+    text-transform: capitalize;
+}
+p{
+    font-size: 1.6rem;
+    /* color: #202020; */
+    color: #363636;
+}
+
+.ventana-espaciada{
+    display: block;
+    margin: .2in;
+    height: auto;
+}
+
+.barra-busqueda{
+    margin: .1in auto;
+    padding: 2px 2vw;
+    display: flex;
+    border: 2px solid #b5b5b5;
+    background-color: #dedede;
+    border-radius: 6px;
+    width: 55%;
+}
+
+.barra-busqueda button{
+    position: relative;
+    top: 6px;
+    border: none;
+    background-color: transparent;
+    padding: 4px 1vw 2px;
+}
+
+.barra-busqueda button img{ /* Lupa */
+    height: 30px;
+}
+
+.barra-busqueda button:hover{
+    cursor: pointer;
+    background-color: #a8a8a8;
+}
+.barra-busqueda button:active{
+    cursor: pointer;
+    background-color: #6a6a6a;
+}
+
+.barra-busqueda input{
+    position: relative;
+    top: 0px;
+    padding: .1in 2vw;
+    width: 34vw;
+}
+
+.barra-busqueda input:active{
+    border-color: #b5b5b5;
+}
+
+.barra-busqueda label{
+    position: relative;
+    top: -1px;
+    margin: .1in 2vw;
+}
+
+table{
+    width: 100%;
+    margin: .2in 0;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #eee;
+}
+
+tr:nth-child(odd){
+    background-color: #c9c9c9;
+}
+
+tr:nth-child(1){ /* Encabezado Tabla */
+    background-color: #515151;
+    color: white;
+}
+
+#tablaProductos td:nth-child(5){
+    width: 350px;
+}
+
+#tablaProductos td:nth-child(2), #tablaProductos td:nth-child(5){
+    text-align: start;
+}
+
+#tablaUsuarios td:nth-child(2){
+    width: 200px;
+}
+#tablaUsuarios td:nth-child(3){
+    width: 280px;
+}
+#tablaUsuarios td:nth-child(6){
+    width: 130px;
+}
+
+th, td{
+    border: 2px solid #ddd;
+    padding: 10px;
+}
+
+#tablaProductos td:nth-child(8), #tablaUsuarios td:nth-child(7){
+    background-color: #9c9c9c;
+    border-color:  #9c9c9c;
+    border-right-color: #ddd;
+}
+
+td form{
+    display: inline;
+}
+
+.btn{
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 4px;
+}
+.editar{
+    border-color: #FFD000;
+}
+.eliminar{
+    border-color: #FF0000;
+}
+.btn:hover{
+    background-color: #4c4c4c;
+    border-color: #4c4c4c;
+    cursor: pointer;
+}
+
+/* Formulario agregarProducto y editarProducto*/
+
+#datosProducto{
+    padding: .3in;
+    height: 5.4in;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+#datosProducto label{
+    font-weight: 600;
+    margin-top: 0px;
+}
+
+#datosProducto .datos{
+    border: 0;
+    outline: 0;
+    width: 45%;
+    padding: 8px 0;
+    margin: .2in 0 .3in;
+    color: #7d7d7d;
+    border-bottom: 2px solid #b7b7b7;
+    background-color: transparent;
+    font-size: medium;
+    transition: 
+        color 0.2s,
+        border-color 0.2s
+}
+#datosProducto .datos:focus{
+    color: #3b3b3b;
+    border-bottom: 2px solid #3b3b3b;
+    transition: 
+        color 0.2s,
+        border-color 0.2s
+}
+#datosProducto .datos:hover{
+    border-color: black;
+    color: black;
+}
+
+#datosProducto .contenedor-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.8in;
+    width: 3in;
+    margin: .1in 0 .2in;
+    padding: .2in;
+    border: 2px solid #737373;
+}
+
+.boton{
+    justify-content: center;
+    background-color: #e6890f;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 1em;
+    width: 45%;
+    color: white;
+    border: none;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
+
+.boton:hover{
+    box-shadow: 0px 2px 10px 2px #e6890f;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
+.boton:active{
+    color: white;
+    background-color: rgb(190, 190, 190);
+    cursor: pointer;
+    box-shadow: 0px 2px 10px 2px white;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
+
+/* Formulario editarUsuario */
+
+#datosUsuario{
+    padding: .3in;
+    height: 5.8in;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* background-color: red; */
+}
+
+#datosUsuario label{
+    font-weight: 600;
+    margin-top: 0px;
+}
+
+#datosUsuario .datos{
+    border: 0;
+    outline: 0;
+    width: 45%;
+    padding: 3px 0;
+    margin: .2in 0 .3in;
+    color: #7d7d7d;
+    border-bottom: 2px solid #b7b7b7;
+    background-color: transparent;
+    font-size: medium;
+    transition: 
+        color 0.2s,
+        border-color 0.2s
+}
+#datosUsuario .datos:focus{
+    color: #3b3b3b;
+    border-bottom: 2px solid #3b3b3b;
+    transition: 
+        color 0.2s,
+        border-color 0.2s
+}
+#datosUsuario .datos:hover{
+    border-color: black;
+    color: black;
+}
+
+.boton{
+    justify-content: center;
+    background-color: #e6890f;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 1em;
+    width: 45%;
+    color: white;
+    border: none;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
+
+.boton:hover{
+    box-shadow: 0px 2px 10px 2px #e6890f;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
+.boton:active{
+    color: white;
+    background-color: rgb(190, 190, 190);
+    cursor: pointer;
+    box-shadow: 0px 2px 10px 2px white;
+    transition: 
+        color 0.2s,
+        background-color 0.2s;
+}
