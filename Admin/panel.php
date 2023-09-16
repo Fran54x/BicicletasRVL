@@ -10,14 +10,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="icon" href="/recursos/icono-pagina.png">
+    <link rel="shortcut icon" href="../img/iconos/iconoRVL.png">
     <title>RVL Bicicletas - Configuración</title>
 </head>
 <body class="admin-panel">
     <div class="menu">
         <a class="enlace-simple"
             href="index.php">
-            <img src="/recursos/atras.png" alt="">
+            <img src="../img/iconos/atras.png" alt="">
             Volver
         </a>
 
@@ -25,25 +25,25 @@
             <a
                 href="../index.html"
                 target="iframe_a">
-                <img src="/recursos/hogar.png" alt="">
+                <img src="../img/iconos/hogar.png" alt="">
                 Inicio
             </a>
             <a
                 href="tablaProductos.php"
                 target="iframe_a">
-                <img src="/recursos/bicicleta (4).png" alt="">
+                <img src="../img/iconos/tabla.png" alt="">
                 Productos
             </a>
             <a
                 href="agregarProducto.php"
                 target="iframe_a">
-                <img src="/recursos/casco-de-bici.png" alt="">
+                <img src="../img/iconos/cascoCiclismo1.png" alt="">
                 Añadir Producto
             </a>
             <a
                 href="tablaUsuarios.php"
                 target="iframe_a">
-                <img src="/recursos/bicicleta (4).png" alt="">
+                <img src="../img/iconos/tabla.png" alt="">
                 Usuarios
             </a>
         </div>

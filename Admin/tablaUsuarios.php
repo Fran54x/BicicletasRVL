@@ -25,7 +25,7 @@
             <form method="GET" action="tablaUsuarios.php" >
                 <input type="text" name="consulta" id="consulta" >
                 <button style="display: inline;" type="submit" name="boton-buscar" id="boton-buscar">
-                    <img src="/recursos/iconos/lupa.png">
+                    <img src="../img/iconos/buscar.png">
                 </button>
             </form>
             
@@ -52,13 +52,13 @@
                 echo "   <form action='editarUsuario.php' method='POST'>";
                 echo "       <input type='hidden' name='idUsuario' value='".$row['idUsuario']."'>";
                 echo "       <button class='btn editar'>";
-                echo "           <img title='Editar' src='../../../recursos/iconos/editar.png' alt='Editar'>";
+                echo "           <img title='Editar' src='../img/iconos/editar.png' alt='Editar'>";
                 echo "       </button>";
                 echo "   </form>";
                 echo "   <form action='../php/eliminarUsuario.php' method='POST'>";
                 echo "       <input type='hidden' name='idUsuario' value='".$row['idUsuario']."'>";
                 echo "       <button class='btn eliminar'>";
-                echo "           <img title='Eliminar' src='../../../recursos/iconos/editar.png' alt='Eliminar'>";
+                echo "           <img title='Eliminar' src='../img/iconos/eliminar.png' alt='Eliminar'>";
                 echo "       </button>";
                 echo "   </form>";
                 echo "</td>";

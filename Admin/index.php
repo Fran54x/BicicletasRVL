@@ -10,7 +10,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="icon" href="/recursos/icono-pagina.png">
+        <link rel="shortcut icon" href="../img/iconos/iconoRVL.png">
         <title>RVL Bicicletas</title>
     </head>
     <body>
@@ -32,12 +32,12 @@
                     <li><a href="#">Productos</a></li>
                     <li>
                         <a class="icono-nav" href="panel.php">
-                            <img src="/recursos/ajustes.png">
+                            <img src="../img/iconos/administracion.png">
                             <span>Administración</span>
                         </a></li>
                     <li>
                         <a id="User" href="perfil.php">
-                            <img src="/recursos/ilustraciones-perfil/unnamed (14).png">
+                            <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
                                 <?php echo $nombre; ?>
                             </span>
@@ -87,7 +87,7 @@
             <div class="contenedor-bicicletas">
                 
                 <div class="tipo-ciclismo"><!-- Bicicleta Urbana -->
-                    <img src="../../../recursos/bicicleta_urbana.jpg" alt=""/>
+                    <img src="../img/bicicletas/biciUrbana.jpg" alt=""/>
                     <div id="bici-urbana" class="tipo-ciclismo-texto">
                         <h2>Bicicleta Urbana</h2>
                         <p>
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="tipo-ciclismo"><!-- Bicicleta BMX -->
-                    <img src="../../../recursos/bicicleta_bmx.jpg" alt=""/>
+                    <img src="../img/bicicletas/biciBMX.jpg" alt=""/>
                     <div id="bici-bmx" class="tipo-ciclismo-texto">
                         <h2>Bicicleta BMX</h2>
                         <p>
@@ -112,7 +112,7 @@
                 </div>
 
                 <div class="tipo-ciclismo"><!-- Bicicleta Ruta -->
-                    <img src="../../../recursos/bicicleta_ruta.jpg" alt=""/>
+                    <img src="../img/bicicletas/biciRuta.jpg" alt=""/>
                     <div id="bici-ruta" class="tipo-ciclismo-texto">
                         <h2>Bicicleta Ruta</h2>
                         <p>
@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="tipo-ciclismo"><!-- Bicicleta Montaña -->
-                    <img src="../../../recursos/bicicleta_montana.jpg" alt=""/>
+                    <img src="../img/bicicletas/biciMontana.jpg" alt=""/>
                     <div id="bici-montana" class="tipo-ciclismo-texto">
                         <h2>Bicicleta Montaña</h2>
                         <p>

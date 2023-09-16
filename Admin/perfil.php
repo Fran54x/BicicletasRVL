@@ -20,7 +20,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="icon" href="/recursos/icono-pagina.png">
+        <link rel="shortcut icon" href="../img/iconos/iconoRVL.png">
         <title>RVL Bicicletas</title>
     </head>
     <body>
@@ -42,12 +42,12 @@
                     <li><a href="productos.php">Productos</a></li>
                     <li>
                         <a class="icono-nav" href="panel.php">
-                            <img src="/recursos/ajustes.png">
+                            <img src="../img/iconos/administracion.png">
                             <span>Administración</span>
                         </a></li>
                     <li>
                         <a id="User" href="#">
-                            <img src="/recursos/ilustraciones-perfil/unnamed (14).png">
+                            <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
                                 <?php echo $nombre; ?>
                             </span>
@@ -92,7 +92,7 @@
                 <input type="number" name="txtCp" class="datos" autocomplete="off" value="<?php echo $usuario->cp ?>" required>
 
                 <!-- <label>Icono:</label> -->
-                <input type="hidden" name="txtIcono" class="datos" autocomplete="off" value="<?php echo $usuario->tipoUsuario ?>" required>
+                <input type="hidden" name="txtIcono" class="datos" autocomplete="off" value="<?php echo $usuario->iconoPerfil ?>" required>
 
                 <label>Fecha de Registro:</label>
                 <input type="text" name="txtFechaRegistro" class="datos" autocomplete="off" minlength="8" maxlength="10" value="<?php echo $usuario->fechaRegistro ?>" readonly>

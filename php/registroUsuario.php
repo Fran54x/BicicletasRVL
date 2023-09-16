@@ -7,7 +7,7 @@
     $contraComprobacion = md5($_POST['txtContraComprobacion']);
     
     $tipoUsuario = "Usuario";
-    $iconoPerfil = rand(1,22);
+    $iconoPerfil = rand(1,52);
     $estado = "Online";
    
     //$telefono = $_POST['telefono'];

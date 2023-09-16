@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="img/iconos/iconoRVL.png">
     <title>RVL Bicicletas</title>
 </head>
 
@@ -15,7 +16,7 @@
         <!-- formulario login -->
         <form class="contenedor-login" method="POST" action="php/verifLogin.php">
             <div>
-                <img src="../recursos/fondos/fondo1.jpg" alt="" class="contenedor-login-imagen">
+                <img src="img/fondos/fondo1.jpg" alt="" class="contenedor-login-imagen">
             </div>
             <div>
                 <span class="material-symbols-outlined">directions_bike RVL</span>

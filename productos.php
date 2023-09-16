@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="icon" href="../recursos/icono-pagina.png">
+        <link rel="shortcut icon" href="img/iconos/iconoRVL.png">
         <title>RVL Bicicletas - Productos</title>
     </head>
     <body>
@@ -35,28 +35,28 @@
             <div class="contenedor-bicicletas">
                 <!-- Catálogo Bicicletas -->
                 <div class="bicicleta">
-                    <img src="../recursos/bicicletas/bici-urbana.png" alt="Bicicleta Urbana">
+                    <img src="img/bicicletas/biciProdUrbana.png" alt="Bicicleta Urbana">
                     <div class="bicicleta-texto">
                         <h2>Urbana</h2>
                         <p>$4,530</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../recursos/bicicletas/bici-bmx.png" alt="Bicicleta BMX">
+                    <img src="img/bicicletas/biciProdBMX.png" alt="Bicicleta BMX">
                     <div class="bicicleta-texto">
                         <h2>BMX</h2>
                         <p>$4,760</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../recursos/bicicletas/bici-ruta.png" alt="Bicicleta Ruta">
+                    <img src="img/bicicletas/biciProdRuta.png" alt="Bicicleta Ruta">
                     <div class="bicicleta-texto">
                         <h2>Ruta</h2>
                         <p>$12,150</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../recursos/bicicletas/bici-montana.png" alt="Bicicleta Montaña">
+                    <img src="img/bicicletas/biciProdMontana.png" alt="Bicicleta Montaña">
                     <div class="bicicleta-texto">
                         <h2>Montaña</h2>
                         <p>$7,796</p>

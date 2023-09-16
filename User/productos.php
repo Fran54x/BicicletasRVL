@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="icon" href="../../../recursos/icono-pagina.png">
+        <link rel="shortcut icon" href="../img/iconos/iconoRVL.png">
         <title>RVL Bicicletas - Productos</title>
     </head>
     <body>
@@ -32,13 +32,13 @@
                     <li><a href="#">Productos</a></li>
                     <li>
                         <a class="icono-nav" href="carrito.php">
-                            <img src="/recursos/carro-de-la-compra.png">
+                            <img src="../img/iconos/carritoCompra.png">
                             <span>Carrito</span>
                         </a>
                     </li>
                     <li>
                         <a id="User" href="perfil.php">
-                            <img src="/recursos/ilustraciones-perfil/unnamed (18).png">
+                            <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
                                 <?php echo $nombre; ?>
                             </span>

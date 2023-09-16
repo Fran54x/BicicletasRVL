@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include 'conexion.php';
 
     $formulario = $_POST['formulario'];
@@ -10,9 +11,13 @@
     $telefono = $_POST['txtTelefono'];
     $direccion = $_POST['txtDireccion'];
     $cp = $_POST['txtCp'];
-    $icono = $_POST['txtIcono'];
+    $iconoPerfil = $_POST['txtIcono'];
 
-    $consulta = "UPDATE usuarios SET nombre='$nombre', contra='$contra', correo='$correo', tipoUsuario='$tipo', telefono='$telefono', direccion='$direccion', cp='$cp', iconoPerfil='$icono' WHERE idUsuario = '$idUsuario'";
+    $_SESSION['usuario'][0] = $nombre;
+    $_SESSION['usuario'][1] = $correo;
+    $_SESSION['usuario'][2] = $iconoPerfil;
+
+    $consulta = "UPDATE usuarios SET nombre='$nombre', contra='$contra', correo='$correo', tipoUsuario='$tipo', telefono='$telefono', direccion='$direccion', cp='$cp', iconoPerfil='$iconoPerfil' WHERE idUsuario = '$idUsuario'";
     $sql = mysqli_query($conexion, $consulta);
     switch($formulario){
         case "0" :

@@ -11,7 +11,7 @@
     background-position: 50% 40%;
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, .2);
-    background-image: url('../recursos/patrick-hendry-1ow9zrlldJU-unsplash.jpg');
+    background-image: url("../img/fondos/fondo.jpg");
 }
 
 .contenedor{
