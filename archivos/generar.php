@@ -10,20 +10,121 @@
   session_start();
   $nombre = $_SESSION['usuario'][0];
   $correo = $_SESSION['usuario'][1];
+  $producto = $_POST['txtProducto'];
+  $precio = $_POST['txtPrecio'];
 
 	require('fpdf/fpdf.php');
   require('../php/conexion.php');
 
-  $email;
+  //fecha en españo
+  $diasSemana = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+  $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+ 
+  $fechaActual = $diasSemana[date('w')]." ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
 
+  //crear archivo pdf
+  $pdf = new FPDF('P', 'mm', 'A4');
+  $pdf -> AddPage();
+  $pdf -> SetTopMargin(25);
+  $pdf -> SetLeftMargin(15);
+  $pdf -> SetRightMargin(15);
   
-	$pdf = new FPDF('P', 'mm', 'A4');
+  //agregar imagen pdf
+  $pdf -> Image('iconoRVL.png', 172, 12, 11);
+  //$pdf -> Image('iconoRVL(128px).png', 162, 12, 11);
+  //agregar titulo
+  $pdf -> SetFont('Arial', 'B', 26);
+  $pdf -> Cell(0, 15, 'Bicicletas y Accesorios RVL', 0, 1, 'C');
+  //$pdf -> Cell(0, 15, '       Bicicletas y Accesorios RVL', 0, 1);
+  $pdf -> SetFont('Arial', 'B', 18);
+  $pdf -> Ln(0.2);
+  $pdf -> Cell(0, 15, 'El Mundo Del Ciclismo', 0, 1, 'C');
+  $pdf -> Ln();
+
+  //agregar texto
+  $pdf -> SetFont('Arial', '', 14);
+  $pdf -> Cell(0, 7, utf8_decode('Recibo de compra de '.$nombre.'.                  '.$fechaActual), 0, 1);
+  $pdf -> Ln();
+
+  //agregar tablas y productos
+  $pdf -> SetFont('Arial', 'B', 14);
+  $pdf -> Cell(30, 10, 'Cantidad', 1, 0, 'C');
+  $pdf -> Cell(105, 10, '    Producto', 1, 0);
+  $pdf -> Cell(42, 10, 'Precio', 1, 0,'C');
+  $pdf -> Ln();
+  $pdf -> SetFont('Arial', '', 14);
+  $pdf -> Cell(30, 10, '1', 1, 0, 'C');
+  $pdf -> Cell(105, 10, utf8_decode('    '.$producto), 1, 0);
+  $pdf -> Cell(42, 10, '$'.$precio, 1, 0, 'C');
+  $pdf -> Ln();
+
+  //columnas vacías
+  for($i = 0; $i < 7; $i++){
+    $pdf -> Cell(30, 10, '', 1, 0, 'C');
+    $pdf -> Cell(105, 10, utf8_decode(''), 1, 0);
+    $pdf -> Cell(42, 10, '', 1, 0, 'C');
+    $pdf -> Ln();
+  }
+
+  //pie de página
+  $pdf -> SetY(260);
+  $pdf -> SetFont('Arial', 'I', 12);
+  $pdf -> Cell(0, 10, utf8_decode('Plaza Box Barket local 8 y 9 sobre Av. Tonalá #4540  Teléfono: 34-33-22-44-54'), 0, 0, 'C');
+  $pdf -> Ln(5);
+  $pdf -> Cell(0, 10, utf8_decode('© 2023 "Bicicletas y Accesorios" RVL'), 0, 0, 'C');
+
+  //crear archivo pdf
+
+	/*$pdf = new FPDF('P', 'mm', 'A4'); //declaración explicita = $pdf = new FPDF() declaración implicita
 	$pdf -> AddPage();
-  $pdf->SetAutoPageBreak(true, 10);
+  $pdf -> SetAutoPageBreak(true, 15);
+  $pdf -> SetFont('Arial', 'B', 16);
+  $pdf -> Cell(40,10, utf8_decode('Bicicletas RVL'));
+  $pdf -> SetFont('Arial', '', 12);
+  $pdf->Cell(20,10, utf8_decode('Recibo de Compra'));
+  $pdf->Cell(80,10, Date('d F y'));
+  $pdf->Cell(20,20, utf8_decode('Producto'));
+  $pdf->Cell(40,20, utf8_decode('Precio'));
+  $pdf->Cell(100, 10, $producto. ' $' . $precio);
+  //$pdf->Cell();
+  $pdf->SetTopMargin(15);
+  $pdf->SetLeftMargin(15);
+  $pdf->SetRightMargin(15);*/
+
+  /*class PDF extends FPDF {
+    function Header() {
+        // Encabezado
+        $this->SetFont('Arial', 'B', 16);
+        $this->Cell(0, 10, 'Bicicletas RVL', 0, 1);
+
+        // Título
+        $this->SetFont('Arial', 'B', 12);
+        $this->Cell(0, 10, 'Recibo de compra', 0, 1);
+        $this->Ln(10); // Salto de línea
+    }
+
+    function Footer() {
+        // Pie de página
+        $this->SetY(-15);
+        $this->SetFont('Arial', 'I', 10);
+        $this->Cell(0, 10, utf8_decode('Página ' . $this->PageNo()), 0, 0, 'C');
+    }
+  }
+
+  $pdf = new PDF();
+  $pdf->AddPage();
+
+  // Crear tabla
+  $pdf->SetFont('Arial', 'B', 12);
+  $pdf->Cell(70, 10, 'Producto', 1);
+  $pdf->Cell(70, 10, 'Precio', 1);
+  $pdf->Ln(); // Salto de línea
+
+  // Ejemplo de fila de producto (puedes agregar más filas con tus datos)
   $pdf->SetFont('Arial', '', 12);
-  $pdf->SetTopMargin(10);
-  $pdf->SetLeftMargin(10);
-  $pdf->SetRightMargin(10);
+  $pdf->Cell(70, 10, utf8_decode($producto), 1);
+  $pdf->Cell(70, 10, '$'.$precio, 1);
+  $pdf->Ln();*/
 
   /*$pdf -> Image('../assets/images/synthpop.png', 88.5, 15, 33, 12, 'PNG');
 
@@ -119,24 +220,22 @@
       $pdf->SetFont('Arial', '', 10);
     }*/
     
-    $pdf -> Output('F', $nombre.'_'.Date("dFY").'.pdf');
+    //nomenclatura "Nombre_DiaMesAño_HoraMinutosSegundos.pdf" -> "Luis Francisco_8-Octubre-2023_134730.pdf"
+    $nombreArchivo = $nombre . '_' . date("d_F_y_His") . '.pdf';
+    //salida de archivo en carpeta actual y nombre
+    $pdf -> Output('F', $nombreArchivo);
 
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
+        //Configuraciones del Servidor
         $mail->SMTPDebug = 2;
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
-        //$mail->Host       = 'smtp-mail.outlook.com';
         $mail->SMTPAuth   = true;
-        /*
-        $mail->Username   = 'marianopad@outlook.com';
-        $mail->Password   = 'Iamyourfather';
-        */
 
-        $mail->Username   = 'riostorres2@gmail.com';
-        $mail->Password   = 'bzqdgldjqiaoqsdc';
+        $mail->Username   = 'bicicletasrvl@gmail.com';
+        $mail->Password   = 'euxqhrtpekmutxfs';
         
         $mail->SMTPSecure = 'TLS';
         $mail->Port       = 587;
@@ -148,20 +247,20 @@
           )
         );
         
-        $mail->setFrom('riostorres2@gmail.com', 'Bicicletas RVL');
-        $mail->addAddress($correo);//modificar
-
-        $mail->addAttachment($nombre.'_'.Date("dFY").'.pdf');//modificar idUsuario
+        //$mail->setFrom('riostorres2@gmail.com', 'Bicicletas RVL');
+        $mail->setFrom('bicicletasrvl@gmail.com', 'Bicicletas RVL');
+        $mail->addAddress($correo);
+        $mail->addAttachment($nombreArchivo);
 
         $mail->isHTML(true);
-        $mail->Subject = 'Comprobante';
-        $mail->Body    = 'Comprobante para '.$nombre.Date("d/F/Y");//cambiar
+        $mail->Subject = 'Recibo de Compra';
+        $mail->Body = 'Agradecemos tu compra en bicicletasrvl.com.mx, a continuación tienes tu recibo de compra ';
         //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'Message has been sent';
+        //echo 'Message has been sent';
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "No se pudo enviar el correo. Correo Error: {$mail->ErrorInfo}";
     }
 
     mysqli_close($conexion);

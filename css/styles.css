@@ -194,7 +194,7 @@ footer p{
     background-color: #171717;
 }
 
-.contenedor-bicicletas, .contenedor-accesorios{
+.contenedor-bicicletas, .contenedor-accesorios, .contenedor-carrito{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -206,6 +206,12 @@ footer p{
 }
 .contenedor-accesorios{
     height: 32in; /*Modificar*/
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor-carrito{
+    height: auto; /*Modificar*/
+    min-height: 1in;
     flex-direction: column;
     align-items: center;
 }
