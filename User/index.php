@@ -37,6 +37,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="icono-nav" href="pedidos.php">
+                            <img src="../img/iconos/pedidos.png">
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li>
                         <a id="User" href="perfil.php">
                             <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">

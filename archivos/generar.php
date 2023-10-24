@@ -10,6 +10,7 @@
   session_start();
   $nombre = $_SESSION['usuario'][0];
   $correo = $_SESSION['usuario'][1];
+  $idUsuario = $_SESSION['usuario'][3];
   $producto = $_POST['txtProducto'];
   $precio = $_POST['txtPrecio'];
 
@@ -220,8 +221,9 @@
       $pdf->SetFont('Arial', '', 10);
     }*/
     
-    //nomenclatura "Nombre_DiaMesAño_HoraMinutosSegundos.pdf" -> "Luis Francisco_8-Octubre-2023_134730.pdf"
-    $nombreArchivo = $nombre . '_' . date("d_F_y_His") . '.pdf';
+    //nomenclatura "IDUSUARIO-AÑO-MES-DIA-HORA.pdf"  ->  "1-24-10-23-024305.pdf"
+    $fechaYHora = date("d-m-y-His");
+    $nombreArchivo = $idUsuario . '-' . $fechaYHora . '.pdf';
     //salida de archivo en carpeta actual y nombre
     $pdf -> Output('F', $nombreArchivo);
 

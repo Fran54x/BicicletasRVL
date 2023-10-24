@@ -37,6 +37,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="icono-nav" href="pedidos.php">
+                            <img src="../img/iconos/pedidos.png">
+                            <span>Pedidos</span>
+                        </a>
+                    </li>
+                    <li>
                         <a id="User" href="perfil.php">
                             <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
@@ -53,28 +59,28 @@
             <div class="contenedor-bicicletas">
                 <!-- Catálogo Bicicletas -->
                 <div class="bicicleta">
-                    <img src="../../../recursos/bicicletas/bici-urbana.png" alt="Bicicleta Urbana">
+                    <img src="../img/bicicletas/bici-urbana.png" alt="Bicicleta Urbana">
                     <div class="bicicleta-texto">
                         <h2>Urbana</h2>
                         <p>$4,530</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../../../recursos/bicicletas/bici-bmx.png" alt="Bicicleta BMX">
+                    <img src="../img/bicicletas/bici-bmx.png" alt="Bicicleta BMX">
                     <div class="bicicleta-texto">
                         <h2>BMX</h2>
                         <p>$4,760</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../../../recursos/bicicletas/bici-ruta.png" alt="Bicicleta Ruta">
+                    <img src="../img/bicicletas/bici-ruta.png" alt="Bicicleta Ruta">
                     <div class="bicicleta-texto">
                         <h2>Ruta</h2>
                         <p>$12,150</p>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="../../../recursos/bicicletas/bici-montana.png" alt="Bicicleta Montaña">
+                    <img src="../img/bicicletas/bici-montana.png" alt="Bicicleta Montaña">
                     <div class="bicicleta-texto">
                         <h2>Montaña</h2>
                         <p>$7,796</p>
@@ -84,13 +90,14 @@
 
             <h2>Accesorios</h2>
             <div class="contenedor-accesorios">
-                <!-- Lista de Productos -->
+                <!-- Lista de Accesorios -->
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-casco.png" alt="Casco">
+                    <img src="../img/accesorios/casco.png" alt="Casco">
                     <div class="accesorio-texto">
                         <h2>Casco</h2>
                         <p>$450</p>
                         <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="1">
                             <input type="hidden" name="txtNombre" value="Casco">
                             <input type="hidden" name="txtPrecio" value="450">
                             <input type="hidden" name="txtImagen" value="casco">
@@ -100,7 +107,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-lampara.png" alt="Lampara">
+                    <img src="../img/accesorios/lampara.png" alt="Lampara">
                     <div class="accesorio-texto">
                         <h2>Lampara de Niebla</h2>
                         <p>$380</p>
@@ -114,7 +121,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-reflejantes.png" alt="Reflejantes">
+                    <img src="../img/accesorios/reflejantes.png" alt="Reflejantes">
                     <div class="accesorio-texto">
                         <h2>Reflejantes</h2>
                         <p>$49</p>
@@ -128,7 +135,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-bomba.png" alt="Bomba">
+                    <img src="../img/accesorios/bomba.png" alt="Bomba">
                     <div class="accesorio-texto">
                         <h2>Bomba de Aire</h2>
                         <p>$319</p>
@@ -136,7 +143,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-gps.png" alt="GPS">
+                    <img src="../img/accesorios/gps.png" alt="GPS">
                     <div class="accesorio-texto">
                         <h2>Geolocalizador (GPS)</h2>
                         <p>$612</p>
@@ -144,7 +151,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-ciclocomputadora.png" alt="Ciclocomputadora">
+                    <img src="../img/accesorios/ciclocomputadora.png" alt="Ciclocomputadora">
                     <div class="accesorio-texto">
                         <h2>Ciclocomputadora</h2>
                         <p>$549</p>
@@ -152,7 +159,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-luces-radio.png" alt="Luces de Radio">
+                    <img src="../img/accesorios/luces-radio.png" alt="Luces de Radio">
                     <div class="accesorio-texto">
                         <h2>Luces de Radio</h2>
                         <p>$321</p>
@@ -160,7 +167,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-ropa-ciclismo.png" alt="Ropa de Ciclismo">
+                    <img src="../img/accesorios/ropa-ciclismo.png" alt="Ropa de Ciclismo">
                     <div class="accesorio-texto">
                         <h2>Ropa de Ciclismo</h2>
                         <p>$1199</p>
@@ -168,14 +175,15 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-calzado-ciclismo.png" alt="Calzado de Ciclismo">
+                    <img src="../img/accesorios/calzado-ciclismo.png" alt="Calzado de Ciclismo">
                     <div class="accesorio-texto">
                         <h2>Calzado de Ciclismo</h2>
                         <p>$3499</p>
+                        <input style="position: relative; top: .75in; width: 100%;" type="button" class="boton" value="Añadir al Carrito">
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-guantes-ciclismo.png" alt="Guantes de Ciclismo">
+                    <img src="../img/accesorios/guantes-ciclismo.png" alt="Guantes de Ciclismo">
                     <div class="accesorio-texto">
                         <h2>Guantes de Ciclismo</h2>
                         <p>$199</p>
@@ -183,7 +191,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-canasta.png" alt="Canasta">
+                    <img src="../img/accesorios/canasta.png" alt="Canasta">
                     <div class="accesorio-texto">
                         <h2>Canasta</h2>
                         <p>$245</p>
@@ -191,7 +199,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-bolsa-ciclismo.png" alt="Bolsa de Ciclismo">
+                    <img src="../img/accesorios/bolsa-ciclismo.png" alt="Bolsa de Ciclismo">
                     <div class="accesorio-texto">
                         <h2>Bolsa de Ciclismo</h2>
                         <p>$289</p>
@@ -205,7 +213,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-mochila.png" alt="Mochila">
+                    <img src="../img/accesorios/mochila.png" alt="Mochila">
                     <div class="accesorio-texto">
                         <h2>Mochila</h2>
                         <p>$549</p>
@@ -219,7 +227,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-mochila-hidratacion.png" alt="Mochila de Hidratación">
+                    <img src="../img/accesorios/mochila-hidratacion.png" alt="Mochila de Hidratación">
                     <div class="accesorio-texto">
                         <h2>Mochila de Hidratación</h2>
                         <p>$389</p>
@@ -233,7 +241,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-parches-y-pegamento.png" alt="Parches y Pegamento">
+                    <img src="../img/accesorios/parches-y-pegamento.png" alt="Parches y Pegamento">
                     <div class="accesorio-texto">
                         <h2>Parches y Pegamento</h2>
                         <p>$179</p>
@@ -241,7 +249,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-llantas.png" alt="Llantas">
+                    <img src="../img/accesorios/llantas.png" alt="Llantas">
                     <div class="accesorio-texto">
                         <h2>Llantas</h2>
                         <p>$612</p>
@@ -249,7 +257,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-rines.png" alt="Rines">
+                    <img src="../img/accesorios/rines.png" alt="Rines">
                     <div class="accesorio-texto">
                         <h2>Rines</h2>
                         <p>$380</p>
@@ -257,7 +265,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-anfora.png" alt="Anfora">
+                    <img src="../img/accesorios/anfora.png" alt="Anfora">
                     <div class="accesorio-texto">
                         <h2>Anfora</h2>
                         <p>$259</p>
@@ -265,7 +273,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-asiento.png" alt="Asiento">
+                    <img src="../img/accesorios/asiento.png" alt="Asiento">
                     <div class="accesorio-texto">
                         <h2>Asiento</h2>
                         <p>$450</p>
@@ -273,7 +281,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-diablitos.png" alt="Diablito">
+                    <img src="../img/accesorios/diablitos.png" alt="Diablito">
                     <div class="accesorio-texto">
                         <h2>Diablito</h2>
                         <p>$180</p>
@@ -281,7 +289,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-calcomanias.png" alt="Calcomanias">
+                    <img src="../img/accesorios/calcomanias.png" alt="Calcomanias">
                     <div class="accesorio-texto">
                         <h2>Calcomanias</h2>
                         <p>$20</p>
@@ -289,7 +297,7 @@
                     </div>
                 </div>
                 <div class="accesorio">
-                    <img src="../../../recursos/productos/prod-campana-pato2.png" alt="Campana de Pato">
+                    <img src="../img/accesorios/campana-pato2.png" alt="Campana de Pato">
                     <div class="accesorio-texto">
                         <h2>Campana de Pato</h2>
                         <p>$210</p>

@@ -1,15 +1,8 @@
 <?php
     session_start();
-    $nombreUsuario = $_SESSION['usuario'][0];
+    $nombre = $_SESSION['usuario'][0];
     $icono = $_SESSION['usuario'][2];
-
-    include '../php/conexion.php';
-
-    $consulta = $_POST['agregar']??NULL;
-
-    // Realizar la consulta a la base de datos
-    $sql = "SELECT * FROM carrito WHERE nombre LIKE '%$consulta%'";
-    $result = mysqli_query($conexion, $sql);
+    $idUsuario = $_SESSION['usuario'][3];
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +14,7 @@
         <link rel="shortcut icon" href="../img/iconos/iconoRVL.png">
         <title>RVL Bicicletas</title>
     </head>
-    <body class="fondo-carrito">
+    <body class="fondo-archivos">
         <div class="cover">
             <h1 id="Titulo">Bicicletas y Accesorios</h1>
             <h2 id="Subtitulo">El Mundo del Ciclismo</h2>
@@ -39,13 +32,13 @@
                     <li><a href="#Contacto">Contacto</a></li>
                     <li><a href="productos.php">Productos</a></li>
                     <li>
-                        <a class="icono-nav" href="#">
+                        <a class="icono-nav" href="carrito.php">
                             <img src="../img/iconos/carritoCompra.png">
                             <span>Carrito</span>
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="pedidos.php">
+                        <a class="icono-nav" href="#">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>
@@ -54,7 +47,7 @@
                         <a id="User" href="perfil.php">
                             <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
-                                <?php echo $nombreUsuario; ?>
+                                <?php echo $nombre; ?>
                             </span>
                         </a>
                     </li>
@@ -62,35 +55,37 @@
             </ul>   
         </nav>
 
-        <section class="tarjeta">
-            <h2>Productos añadidos al carrito</h2>
-            <div class="contenedor-carrito">
+        <section class="tarjeta" style="">
+            <h2>Pedidos</h2>
+            <div class="contenedor-archivos">
+            <?php
+                $directorio = "C:/xampp/htdocs/BicicletasRVL/archivos";
 
-            <?php foreach ($result as $row) {
-                echo '<div class="producto">';
-                echo '<img src="../img/accesorios/'.$row['imagen'].'.png" alt="Casco">';
-                echo '<div class="accesorio-texto">';
-                echo '<h2>'.$row['nombre'].'</h2>';
-                echo '<p>$'.$row['precio'].'</p>';
-                echo '<p class="producto-descripcion">'.$row['descripcion'].'</p>';
-                echo '<form action="../php/eliminarCarrito.php" method="POST" >';
-                echo '<input type="hidden" name="txtIdProducto" value='.$row["idProducto"].'>' ;
-                echo '<input style="position: relative; bottom: 0; width: 100%; margin-bottom: .1in;" type="submit" class="boton-eliminar" value="Eliminar">';
-                echo '</form>';
-                echo '<form action="../archivos/generar.php" method="POST">';
-                echo '<input type="hidden" name="txtProducto" value="'.htmlspecialchars($row['nombre']).'">';
-                echo '<input type="hidden" name="txtPrecio" value='.$row['precio'].'>' ;
-                echo '<input style="position: relative; bottom: 0; width: 100%; margin-top: .1in;" type="submit" class="boton" value="Pagar">';
-                echo '</form>';
-                echo '</div>';
-                echo '</div>';
-            }?>
+                // carpeta con archivos PDF
+                $archivos = glob("$directorio/*.pdf");
 
+                foreach ($archivos as $archivo) {
+                    // obtiene el nombre de archivo sin la extensión .pdf
+                    $nombreArchivo = pathinfo($archivo, PATHINFO_FILENAME);
+
+                    // divide el nombre del archivo en partes usando el guion "-"
+                    // el delimitador del nombre es "-" y por la nomenclatura se divide en 5 partes
+                    $partes = explode('-', $nombreArchivo);
+
+                    // Compara el primer dígito del nombre del archivo con la ID de usuario
+                    if ($idUsuario == $partes[0]) {
+                        echo '<div class="marco-archivo">';
+                        echo '<img src="./../img/iconos/archivoPDF.png" alt="PDF" />';
+                        echo '<a href="../archivos/' . basename($archivo) . '" target="_blank">' . basename($archivo) . '</a>';
+                        echo '</div>';
+                    }
+                }?>
             </div>
         </section>
 
+
         <footer id="Contacto">
-            <p>Estamos ubicados en Plaza Box Barket local 8 y 9 sobre Av. Tonalá #4540</p>
+            <p>Estamos ubicados en Plaza Box Market local 8 y 9 sobre Av. Tonalá #4540</p>
             <p>Comunicate con nosotros al teléfono: 34-33-22-44-54</p>
             <p>© 2023 "Bicicletas y Accesorios" <span class="letras-rvl">RVL</span></p>
         </footer>

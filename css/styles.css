@@ -274,6 +274,7 @@ footer p{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .contenedor-bicicletas .tipo-ciclismo{
@@ -414,7 +415,7 @@ footer p{
 
 /* Página de Carrito */
 
-.fondo-carrito{
+.fondo-carrito, .fondo-archivos{
     background-color: #9c9c9c;
 }
 
@@ -584,4 +585,41 @@ footer p{
     position: relative;
     top: .75in;
     width: 100%;
+}
+
+
+/* Pedidos PDF */
+.contenedor-archivos{
+    width: auto;
+    height: auto;
+    border-top: 4px solid #141414;
+    border-bottom: 4px solid #141414;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column-reverse;
+    /* border: 6px solid green; */
+}
+
+.marco-archivo{
+    width: auto;
+    height: 8em;
+    align-content: center;
+    border-top: 1px solid #141414;
+    border-bottom: 1px solid #141414;
+    display: flex;
+    flex-direction: row;
+    background-color: #e7e7e7;
+    /* background-color: #e6890f; */
+    align-items: center;
+    margin: 10px 1em;
+}
+
+.marco-archivo img{
+    margin: 0 .5em;
+    height: 100%;
+    /* background-color: #edd716; */
+}
+
+.marco-archivo a{
+    color: #202020;
 }

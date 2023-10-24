@@ -19,7 +19,8 @@
             $datos = array(
                 0 => $usuario->nombre,
                 1 => $usuario->correo,
-                2 => $usuario->iconoPerfil
+                2 => $usuario->iconoPerfil,
+                3 => $usuario->idUsuario
             );
 
             $_SESSION['usuario'] = $datos;
