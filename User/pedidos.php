@@ -1,6 +1,12 @@
 <?php
     session_start();
+    $_SESSION['usuario'][0] = $_GET['nombreUsuario'];
+    $_SESSION['usuario'][1] = $_GET['correo'];
+    $_SESSION['usuario'][2] = $_GET['icono'];
+    $_SESSION['usuario'][3] = $_GET['idUsuario'];
+
     $nombre = $_SESSION['usuario'][0];
+    $correo = $_SESSION['usuario'][1];
     $icono = $_SESSION['usuario'][2];
     $idUsuario = $_SESSION['usuario'][3];
 ?>
@@ -27,12 +33,12 @@
                     </li>
                 </div>
                 <div class="enlaces">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="index.php#Acerca">Acerca de</a></li>
+                    <li><a href="http://www.bicicletasRVL.com.mx/User/index.php">Inicio</a></li>
+                    <li><a href="http://www.bicicletasRVL.com.mx/User/index.php#Acerca">Acerca de</a></li>
                     <li><a href="#Contacto">Contacto</a></li>
-                    <li><a href="productos.php">Productos</a></li>
+                    <li><a href="http://www.bicicletasRVL.com.mx/User/productos.php">Productos</a></li>
                     <li>
-                        <a class="icono-nav" href="carrito.php">
+                        <a class="icono-nav" href="http://www.bicicletasRVL.com.mx/User/carrito.php">
                             <img src="../img/iconos/carritoCompra.png">
                             <span>Carrito</span>
                         </a>
@@ -44,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="User" href="perfil.php">
+                        <a id="User" href="http://www.bicicletasRVL.com.mx/User/perfil.php">
                             <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
                                 <?php echo $nombre; ?>
@@ -59,7 +65,7 @@
             <h2>Pedidos</h2>
             <div class="contenedor-archivos">
             <?php
-                $directorio = "C:/xampp/htdocs/BicicletasRVL/archivos";
+                $directorio = "../archivos";
 
                 // carpeta con archivos PDF
                 $archivos = glob("$directorio/*.pdf");
