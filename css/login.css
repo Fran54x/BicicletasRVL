@@ -47,11 +47,21 @@
     background: linear-gradient(rgba(98, 98, 98, 0.514), rgba(0, 0, 0, 0.573));
 }
 
+/* Login default para todos los navegadores */
 .contenedor-login-imagen{
     height: 100%;
     margin: 0 2.3em 0 0;
 }
 
+/* Login modificado para navegador firefox */
+@-moz-document url-prefix() {
+    .contenedor-login-imagen{
+        height: 100%;
+        margin: 0 2.3em 0 0;
+        width: 95%;
+    }
+}
+  
 .datos{
     border: 0;
     outline: 0;
