@@ -1,8 +1,8 @@
 <?php
     include 'conexion.php';
 
-    $idProducto = $_POST['txtIdProducto']; 
-    $consulta = "DELETE FROM carrito WHERE idProducto = '$idProducto'";
+    $idCarrito = $_POST['txtIdCarrito']; 
+    $consulta = "DELETE FROM carrito WHERE idCarrito = '$idCarrito'";
     $sql = mysqli_query($conexion, $consulta);
     echo '<meta http-equiv="refresh" content="2; URL=../User/carrito.php">';
 ?>

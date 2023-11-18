@@ -194,6 +194,54 @@ footer p{
     background-color: #171717;
 }
 
+.barra-busqueda{
+    margin: .1in auto;
+    padding: 2px 2vw;
+    display: flex;
+    border: 2px solid #b5b5b5;
+    background-color: #dedede;
+    border-radius: 6px;
+    width: 55%;
+}
+
+.barra-busqueda button{
+    position: relative;
+    top: 6px;
+    border: none;
+    background-color: transparent;
+    padding: 4px 1vw 2px;
+}
+
+.barra-busqueda button img{ /* Lupa */
+    height: 30px;
+}
+
+.barra-busqueda button:hover{
+    cursor: pointer;
+    background-color: #a8a8a8;
+}
+.barra-busqueda button:active{
+    cursor: pointer;
+    background-color: #6a6a6a;
+}
+
+.barra-busqueda input{
+    position: relative;
+    top: -4px;
+    padding: .1in 2vw;
+    width: 33vw;
+}
+
+.barra-busqueda input:active{
+    border-color: #b5b5b5;
+}
+
+.barra-busqueda label{
+    position: relative;
+    top: 7px;
+    margin: .1in 2vw;
+}
+
 .contenedor-bicicletas, .contenedor-accesorios, .contenedor-carrito{
     width: 100%;
     display: flex;

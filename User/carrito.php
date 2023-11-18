@@ -74,7 +74,7 @@
                 echo '<p>$'.$row['precio'].'</p>';
                 echo '<p class="producto-descripcion">'.$row['descripcion'].'</p>';
                 echo '<form action="../php/eliminarCarrito.php" method="POST" >';
-                echo '<input type="hidden" name="txtIdProducto" value='.$row["idProducto"].'>' ;
+                echo '<input type="hidden" name="txtIdCarrito" value='.$row["idCarrito"].'>' ;
                 echo '<input style="position: relative; bottom: 0; width: 100%; margin-bottom: .1in;" type="submit" class="boton-eliminar" value="Eliminar">';
                 echo '</form>';
                 echo '<form action="../archivos/generar.php" method="POST">';

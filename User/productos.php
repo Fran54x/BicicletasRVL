@@ -2,6 +2,11 @@
     session_start();
     $nombre = $_SESSION['usuario'][0];
     $icono = $_SESSION['usuario'][2];
+
+    include '../php/conexion.php';
+    $consulta = $_GET['consulta']??NULL; //permite la nulidad de la variable
+    $sql = "SELECT * FROM productos WHERE nombre LIKE '%$consulta%'";
+    $result = mysqli_query($conexion, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -55,6 +60,18 @@
         </nav>
 
         <section class="tarjeta">
+
+            <div class="barra-busqueda">
+                <label>Buscar: </label>
+                <!-- Hace que se llame así mismo -->
+                <form method="GET" action="productos.php" >
+                    <input type="text" name="consulta" id="consulta" >
+                    <button style="display: inline;" name="boton-buscar" id="boton-buscar">
+                        <img src="../img/iconos/buscar.png">
+                    </button>
+                </form>
+            </div>
+
             <h2>Bicicletas</h2>
             <div class="contenedor-bicicletas">
                 <!-- Catálogo Bicicletas -->
@@ -90,7 +107,26 @@
 
             <h2>Accesorios</h2>
             <div class="contenedor-accesorios">
-                <!-- Lista de Accesorios -->
+            <?php foreach ($result as $row) {
+            echo '<div class="accesorio">';
+            echo '  <img src="../img/accesorios/'.$row['imagen'].'.png" alt="'.$row['imagen'].'">';
+            echo '  <div class="accesorio-texto">';
+            echo '      <h2>'.$row['nombre'].'</h2>';
+            echo '      <p>$'.$row['precio'].'</p>';
+            echo '      <form action="../php/agregarCarrito.php" method="POST">';
+            echo '          <input type="hidden" name="txtIdProducto" value="'.$row['idProducto'].'">';
+            echo '          <input type="hidden" name="txtNombre" value="'.$row['nombre'].'">';
+            echo '          <input type="hidden" name="txtPrecio" value="'.$row['precio'].'">';
+            echo '          <input type="hidden" name="txtImagen" value="'.$row['imagen'].'">';
+            echo '          <input type="hidden" name="txtDescripcion" value="'.$row['descripcion'].'">';
+            echo '          <input type="submit" style="position: relative; top: .75in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">';
+            echo '      </form>';
+            echo '  </div>';
+            echo '</div>';
+            }?>
+
+
+                <!-- Lista de Accesorios
                 <div class="accesorio">
                     <img src="../img/accesorios/casco.png" alt="Casco">
                     <div class="accesorio-texto">
@@ -304,7 +340,7 @@
                         <input style="position: relative; top: .75in; width: 100%;" type="button" class="boton" value="Añadir al Carrito">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
         <footer id="Contacto">
