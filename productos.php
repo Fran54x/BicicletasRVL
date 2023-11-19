@@ -1,3 +1,10 @@
+<?php
+    include 'php/conexion.php';
+    $consulta = $_GET['consulta']??NULL; //permite la nulidad de la variable
+    $sql = "SELECT * FROM productos WHERE nombre LIKE '%$consulta%'";
+    $result = mysqli_query($conexion, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -31,197 +38,118 @@
         </nav>
 
         <section class="tarjeta">
+
+            <div class="barra-busqueda">
+                <label>Buscar: </label>
+                <!-- Hace que se llame así mismo -->
+                <form method="GET" action="productos.php" >
+                    <input type="text" name="consulta" id="consulta" >
+                    <button style="display: inline;" name="boton-buscar" id="boton-buscar">
+                        <img src="img/iconos/buscar.png">
+                    </button>
+                </form>
+            </div>
+
             <h2>Bicicletas</h2>
             <div class="contenedor-bicicletas">
                 <!-- Catálogo Bicicletas -->
                 <div class="bicicleta">
-                    <img src="img/bicicletas/biciProdUrbana.png" alt="Bicicleta Urbana">
+                    <img src="img/bicicletas/bici-urbana.png" alt="Bicicleta Urbana">
                     <div class="bicicleta-texto">
                         <h2>Urbana</h2>
                         <p>$4,530</p>
+                        <form action="php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Urbana">
+                            <input type="hidden" name="txtPrecio" value="4530">
+                            <input type="hidden" name="txtImagen" value="bici-urbana">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta urbana tinta, perfecta para paseos dentro de la ciudad">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="img/bicicletas/biciProdBMX.png" alt="Bicicleta BMX">
+                    <img src="img/bicicletas/bici-bmx.png" alt="Bicicleta BMX">
                     <div class="bicicleta-texto">
                         <h2>BMX</h2>
                         <p>$4,760</p>
+                        <form action="php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="BMX">
+                            <input type="hidden" name="txtPrecio" value="4760">
+                            <input type="hidden" name="txtImagen" value="bici-bmx">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta BMX color roja y ligera, se necesita mucha destreza para sacar potencial a esta bicicleta">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="img/bicicletas/biciProdRuta.png" alt="Bicicleta Ruta">
+                    <img src="img/bicicletas/bici-ruta.png" alt="Bicicleta Ruta">
                     <div class="bicicleta-texto">
                         <h2>Ruta</h2>
                         <p>$12,150</p>
+                        <form action="php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Ruta">
+                            <input type="hidden" name="txtPrecio" value="12150">
+                            <input type="hidden" name="txtImagen" value="bici-ruta">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta de ruta color negro con vivos rojos, un largo camino en la carretera lejos de la ciudad espera">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
-                    <img src="img/bicicletas/biciProdMontana.png" alt="Bicicleta Montaña">
+                    <img src="img/bicicletas/bici-montana.png" alt="Bicicleta Montaña">
                     <div class="bicicleta-texto">
                         <h2>Montaña</h2>
                         <p>$7,796</p>
+                        <form action="php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Montaña">
+                            <input type="hidden" name="txtPrecio" value="7796">
+                            <input type="hidden" name="txtImagen" value="bici-montana">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta de montaña color azul cielo, está lista para rodar en cualquier tipo de terreno">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
+                    </div>
+                </div>
+                <div class="bicicleta">
+                    <img src="img/bicicletas/bici-oso1.png" alt="Bicicleta Angel Oso Holandes">
+                    <div class="bicicleta-texto">
+                        <h2>Oso holandes</h2>
+                        <p>$7,550</p>
+                        <form action="php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Oso Holandes">
+                            <input type="hidden" name="txtPrecio" value="7550">
+                            <input type="hidden" name="txtImagen" value="bici-oso1">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta Angelo, una bicicleta holandeza color naranja fuera de serie">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">';
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <h2>Productos</h2>
-            <div class="contenedor-productos">
-                <!-- Lista de Productos -->
-                <div class="producto">
-                    <img src="../recursos/productos/prod-casco.png" alt="Casco">
-                    <div class="producto-texto">
-                        <h2>Casco</h2>
-                        <p>$450</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-lampara.png" alt="Lampara">
-                    <div class="producto-texto">
-                        <h2>Lampara de Niebla</h2>
-                        <p>$380</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-reflejantes.png" alt="Reflejantes">
-                    <div class="producto-texto">
-                        <h2>Reflejantes</h2>
-                        <p>$49</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-bomba.png" alt="Bomba">
-                    <div class="producto-texto">
-                        <h2>Bomba de Aire</h2>
-                        <p>$319</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-gps.png" alt="GPS">
-                    <div class="producto-texto">
-                        <h2>Geolocalizador (GPS)</h2>
-                        <p>$612</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-ciclocomputadora.png" alt="Ciclocomputadora">
-                    <div class="producto-texto">
-                        <h2>Ciclocomputadora</h2>
-                        <p>$549</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-luces-radio.png" alt="Luces de Radio">
-                    <div class="producto-texto">
-                        <h2>Luces de Radio</h2>
-                        <p>$321</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-ropa-ciclismo.png" alt="Ropa de Ciclismo">
-                    <div class="producto-texto">
-                        <h2>Ropa de Ciclismo</h2>
-                        <p>$1199</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-calzado-ciclismo.png" alt="Calzado de Ciclismo">
-                    <div class="producto-texto">
-                        <h2>Calzado de Ciclismo</h2>
-                        <p>$3499</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-guantes-ciclismo.png" alt="Guantes de Ciclismo">
-                    <div class="producto-texto">
-                        <h2>Guantes de Ciclismo</h2>
-                        <p>$199</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-canasta.png" alt="Canasta">
-                    <div class="producto-texto">
-                        <h2>Canasta</h2>
-                        <p>$245</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-bolsa-ciclismo.png" alt="Bolsa de Ciclismo">
-                    <div class="producto-texto">
-                        <h2>Bolsa de Ciclismo</h2>
-                        <p>$289</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-mochila.png" alt="Mochila">
-                    <div class="producto-texto">
-                        <h2>Mochila</h2>
-                        <p>$549</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-mochila-hidratacion.png" alt="Mochila de Hidratación">
-                    <div class="producto-texto">
-                        <h2>Mochila de Hidratación</h2>
-                        <p>$389</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-parches-y-pegamento.png" alt="Parches y Pegamento">
-                    <div class="producto-texto">
-                        <h2>Parches y Pegamento</h2>
-                        <p>$179</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-llantas.png" alt="Llantas">
-                    <div class="producto-texto">
-                        <h2>Llantas</h2>
-                        <p>$612</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-rines.png" alt="Rines">
-                    <div class="producto-texto">
-                        <h2>Rines</h2>
-                        <p>$380</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-anfora.png" alt="Anfora">
-                    <div class="producto-texto">
-                        <h2>Anfora</h2>
-                        <p>$259</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-asiento.png" alt="Asiento">
-                    <div class="producto-texto">
-                        <h2>Asiento</h2>
-                        <p>$450</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-diablitos.png" alt="Diablito">
-                    <div class="producto-texto">
-                        <h2>Diablito</h2>
-                        <p>$180</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-calcomanias.png" alt="Calcomanias">
-                    <div class="producto-texto">
-                        <h2>Calcomanias</h2>
-                        <p>$20</p>
-                    </div>
-                </div>
-                <div class="producto">
-                    <img src="../recursos/productos/prod-campana-pato2.png" alt="Campana de Pato">
-                    <div class="producto-texto">
-                        <h2>Campana de Pato</h2>
-                        <p>$210</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Accesorios</h2>
+            <!-- Lista de Accesorios -->
+            <div class="contenedor-accesorios">
+            <?php foreach ($result as $row) {
+            echo '<div class="accesorio">';
+            echo '  <img src="img/accesorios/'.$row['imagen'].'.png" alt="'.$row['imagen'].'">';
+            echo '  <div class="accesorio-texto">';
+            echo '      <h2>'.$row['nombre'].'</h2>';
+            echo '      <p>$'.$row['precio'].'</p>';
+            echo '      <form action="php/agregarCarrito.php" method="POST">';
+            echo '          <input type="hidden" name="txtIdProducto" value="'.$row['idProducto'].'">';
+            echo '          <input type="hidden" name="txtNombre" value="'.$row['nombre'].'">';
+            echo '          <input type="hidden" name="txtPrecio" value="'.$row['precio'].'">';
+            echo '          <input type="hidden" name="txtImagen" value="'.$row['imagen'].'">';
+            echo '          <input type="hidden" name="txtDescripcion" value="'.$row['descripcion'].'">';
+            echo '          <input type="submit" style="position: relative; top: .75in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">';
+            echo '      </form>';
+            echo '  </div>';
+            echo '</div>';
+            }?>
         </section>
 
         <footer id="Contacto">
