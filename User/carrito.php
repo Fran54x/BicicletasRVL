@@ -68,7 +68,7 @@
 
             <?php foreach ($result as $row) {
                 echo '<div class="producto">';
-                echo '<img src="../img/accesorios/'.$row['imagen'].'.png" alt="Casco">';
+                echo '<img src="../img/accesorios/'.$row['imagen'].'.png" alt="'.$row['imagen'].'">';
                 echo '<div class="accesorio-texto">';
                 echo '<h2>'.$row['nombre'].'</h2>';
                 echo '<p>$'.$row['precio'].'</p>';

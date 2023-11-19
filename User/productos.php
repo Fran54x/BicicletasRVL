@@ -80,6 +80,14 @@
                     <div class="bicicleta-texto">
                         <h2>Urbana</h2>
                         <p>$4,530</p>
+                        <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Urbana">
+                            <input type="hidden" name="txtPrecio" value="4530">
+                            <input type="hidden" name="txtImagen" value="bici-urbana">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta urbana tinta, perfecta para paseos dentro de la ciudad">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
@@ -87,6 +95,14 @@
                     <div class="bicicleta-texto">
                         <h2>BMX</h2>
                         <p>$4,760</p>
+                        <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="BMX">
+                            <input type="hidden" name="txtPrecio" value="4760">
+                            <input type="hidden" name="txtImagen" value="bici-bmx">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta BMX color roja y ligera, se necesita mucha destreza para sacar potencial a esta bicicleta">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
@@ -94,6 +110,14 @@
                     <div class="bicicleta-texto">
                         <h2>Ruta</h2>
                         <p>$12,150</p>
+                        <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Ruta">
+                            <input type="hidden" name="txtPrecio" value="12150">
+                            <input type="hidden" name="txtImagen" value="bici-ruta">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta de ruta color negro con vivos rojos, un largo camino en la carretera lejos de la ciudad espera">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
                     </div>
                 </div>
                 <div class="bicicleta">
@@ -101,6 +125,29 @@
                     <div class="bicicleta-texto">
                         <h2>Montaña</h2>
                         <p>$7,796</p>
+                        <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Montaña">
+                            <input type="hidden" name="txtPrecio" value="7796">
+                            <input type="hidden" name="txtImagen" value="bici-montana">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta de montaña color azul cielo, está lista para rodar en cualquier tipo de terreno">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">
+                        </form>
+                    </div>
+                </div>
+                <div class="bicicleta">
+                    <img src="../img/bicicletas/bici-oso1.png" alt="Bicicleta Angel Oso Holandes">
+                    <div class="bicicleta-texto">
+                        <h2>Oso holandes</h2>
+                        <p>$7,550</p>
+                        <form action="../php/agregarCarrito.php" method="POST">
+                            <input type="hidden" name="txtIdProducto" value="0">
+                            <input type="hidden" name="txtNombre" value="Oso Holandes">
+                            <input type="hidden" name="txtPrecio" value="7550">
+                            <input type="hidden" name="txtImagen" value="bici-oso1">
+                            <input type="hidden" name="txtDescripcion" value="Bicicleta Angelo, una bicicleta holandeza color naranja fuera de serie">
+                            <input type="submit" style="position: relative; top: .2in; width: 100%;" class="boton" name="agregar" value="Añadir al Carrito">';
+                        </form>
                     </div>
                 </div>
             </div>

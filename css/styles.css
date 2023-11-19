@@ -260,7 +260,7 @@ footer p{
 .contenedor-carrito{
     height: auto; /*Modificar*/
     min-height: 1in;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 }
 

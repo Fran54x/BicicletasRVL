@@ -71,6 +71,11 @@
                     // divide el nombre del archivo en partes usando el guion "-"
                     // el delimitador del nombre es "-" y por la nomenclatura se divide en 5 partes
                     $partes = explode('-', $nombreArchivo);
+                    //$partes[0]; //id
+                    //$partes[1]; //dia
+                    //$partes[2]; //mes
+                    //$partes[3]; //año
+                    //$partes[4]; //hora
 
                     // Compara el primer dígito del nombre del archivo con la ID de usuario
                     if ($idUsuario == $partes[0]) {
