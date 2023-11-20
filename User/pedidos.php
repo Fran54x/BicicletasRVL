@@ -33,12 +33,12 @@
                     </li>
                 </div>
                 <div class="enlaces">
-                    <li><a href="http://www.bicicletasRVL.com.mx/User/index.php">Inicio</a></li>
-                    <li><a href="http://www.bicicletasRVL.com.mx/User/index.php#Acerca">Acerca de</a></li>
+                    <li><a href="http://192.168.100.6:80/User/index.php">Inicio</a></li>
+                    <li><a href="http://192.168.100.6:80/User/index.php#Acerca">Acerca de</a></li>
                     <li><a href="#Contacto">Contacto</a></li>
-                    <li><a href="http://www.bicicletasRVL.com.mx/User/productos.php">Productos</a></li>
+                    <li><a href="http://192.168.100.6:80/User/productos.php">Productos</a></li>
                     <li>
-                        <a class="icono-nav" href="http://www.bicicletasRVL.com.mx/User/carrito.php">
+                        <a class="icono-nav" href="http://192.168.100.6:80/User/carrito.php">
                             <img src="../img/iconos/carritoCompra.png">
                             <span>Carrito</span>
                         </a>
@@ -50,7 +50,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="User" href="http://www.bicicletasRVL.com.mx/User/perfil.php">
+                        <a id="User" href="http://192.168.100.6:80/User/perfil.php">
                             <img src="../img/perfiles/<?php echo $icono; ?>.png" >
                             <span class="nombre-user">
                                 <?php echo $nombre; ?>

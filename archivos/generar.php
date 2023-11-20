@@ -17,8 +17,8 @@
   $correo = $_SESSION['usuario'][1];
   $icono = $_SESSION['usuario'][2];
   $idUsuario = $_SESSION['usuario'][3];
-  $producto = $_POST['txtProducto'];
-  $precio = $_POST['txtPrecio'];
+  $producto = $_GET['txtProducto'];
+  $precio = $_GET['txtPrecio'];
 
 	require('fpdf/fpdf.php');
 
@@ -123,6 +123,7 @@
         echo "No se pudo enviar el correo. Correo Error: {$mail->ErrorInfo}";
     }
 
-    $url = "http://www.bicicletasRVL.com.mx/User/carrito.php";
+    //$url = "http://10.0.0.2/User/carrito.php";
+    $url = "http://192.168.100.6:80/User/carrito.php";
     echo "<meta http-equiv='refresh' content='0;url=$url'>";    
 ?>
