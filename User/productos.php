@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="http://www.bicicletasRVL.webdav.com.mx/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
+                        <a class="icono-nav" href="http://192.168.100.6:81/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>

@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="http://www.bicicletasRVL.webdav.com.mx/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
+                        <a class="icono-nav" href="http://192.168.100.6:81/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombreUsuario); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>
@@ -79,7 +79,7 @@
                 echo '<input type="hidden" name="txtIdCarrito" value='.$row["idCarrito"].'>' ;
                 echo '<input style="position: relative; bottom: 0; width: 100%; margin-bottom: .1in;" type="submit" class="boton-eliminar" value="Eliminar">';
                 echo '</form>';
-                echo '<form action="http://10.0.0.4/archivos/generar.php" method="GET">';
+                echo '<form action="http://192.168.100.6:81/archivos/generar.php" method="GET">';
 		echo '<input type="hidden" name="nombreUsuario" value="'.$nombreUsuario.'" >';
 		echo '<input type="hidden" name="correo" value="'.$correo.'" >';
 		echo '<input type="hidden" name="icono" value="'.$icono.'?>" >';
