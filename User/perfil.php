@@ -5,6 +5,7 @@
     $nombre = $_SESSION['usuario'][0];
     $correo = $_SESSION['usuario'][1];
     $icono = $_SESSION['usuario'][2];
+    $idUsuario = $_SESSION['usuario'][3];
 
     $consulta = "SELECT * FROM usuarios WHERE correo = '$correo'";
     $sql = mysqli_query($conexion, $consulta);
@@ -47,7 +48,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="pedidos.php">
+                        <a class="icono-nav" href="http://www.bicicletasRVL.webdav.com.mx/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>

@@ -2,6 +2,7 @@
     session_start();
     $nombre = $_SESSION['usuario'][0];
     $icono = $_SESSION['usuario'][2];
+    $idUsuario = $_SESSION['usuario'][3];
 
     include '../php/conexion.php';
     $consulta = $_GET['consulta']??NULL; //permite la nulidad de la variable
@@ -42,7 +43,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="pedidos.php">
+                        <a class="icono-nav" href="http://www.bicicletasRVL.webdav.com.mx/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>

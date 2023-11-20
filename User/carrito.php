@@ -1,7 +1,9 @@
 <?php
     session_start();
     $nombreUsuario = $_SESSION['usuario'][0];
+    $correo = $_SESSION['usuario'][1];
     $icono = $_SESSION['usuario'][2];
+    $idUsuario = $_SESSION['usuario'][3];
 
     include '../php/conexion.php';
 
@@ -45,7 +47,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="icono-nav" href="pedidos.php">
+                        <a class="icono-nav" href="http://www.bicicletasRVL.webdav.com.mx/User/pedidos.php?nombreUsuario=<?php echo urlencode($nombre); ?>&icono=<?php echo urlencode($icono); ?>&idUsuario=<?php echo urlencode($idUsuario); ?>">
                             <img src="../img/iconos/pedidos.png">
                             <span>Pedidos</span>
                         </a>
@@ -77,9 +79,13 @@
                 echo '<input type="hidden" name="txtIdCarrito" value='.$row["idCarrito"].'>' ;
                 echo '<input style="position: relative; bottom: 0; width: 100%; margin-bottom: .1in;" type="submit" class="boton-eliminar" value="Eliminar">';
                 echo '</form>';
-                echo '<form action="../archivos/generar.php" method="POST">';
-                echo '<input type="hidden" name="txtProducto" value="'.htmlspecialchars($row['nombre']).'">';
-                echo '<input type="hidden" name="txtPrecio" value='.$row['precio'].'>' ;
+                echo '<form action="http://10.0.0.4/archivos/generar.php" method="GET">';
+		echo '<input type="hidden" name="nombreUsuario" value="'.$nombreUsuario.'" >';
+		echo '<input type="hidden" name="correo" value="'.$correo.'" >';
+		echo '<input type="hidden" name="icono" value="'.$icono.'?>" >';
+		echo '<input type="hidden" name="idUsuario" value="'.$idUsuario.'" >';
+		echo '<input type="hidden" name="txtProducto" value="'.htmlspecialchars($row['nombre']).'">';
+                echo '<input type="hidden" name="txtPrecio" value='.$row['precio'].'>';
                 echo '<input style="position: relative; bottom: 0; width: 100%; margin-top: .1in;" type="submit" class="boton" value="Pagar">';
                 echo '</form>';
                 echo '</div>';
